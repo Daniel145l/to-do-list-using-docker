@@ -1,0 +1,15 @@
+# version: "3.8"
+
+services:
+  todo-app:
+    build: .
+    container_name: todo-list-container
+    ports:
+      - "3000:3000"
+    volumes:
+      - todo-data:/data
+    restart: always
+
+volumes:
+  todo-data:
+    driver: local
